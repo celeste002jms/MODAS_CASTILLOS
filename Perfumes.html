@@ -182,12 +182,12 @@
 @media (max-width: 768px) {
 
     .grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 por fila */
+        grid-template-columns: repeat(3, 1fr); /* 2 por fila */
         gap: 15px;
     }
 
     .card img {
-        height: 250px; /* más pequeño para móvil */
+        height: 150px; /* más pequeño para móvil */
     }
 
     .container {
@@ -222,6 +222,21 @@
     .nav-links a {
         font-size: 0.6rem;
         margin: 5px;
+    }
+}
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr); /* sigue en 2 */
+        gap: 10px;
+    }
+
+    .card img {
+        height: 100px;
+    }
+
+    .btn-gold {
+        padding: 8px 20px;
+        font-size: 0.6rem;
     }
 }
     </style>
