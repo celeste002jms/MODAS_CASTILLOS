@@ -178,34 +178,51 @@
             text-align: center;
             clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
         }
-        /* Teléfono */
-@media (max-width: 480px) {
-  .contenedor-tarjetas {
-    grid-template-columns: repeat(2, 1fr); /* 👈 aquí forzamos 2 */
-  }
-}
-
-.contenedor-tarjetas {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.tarjeta {
-  width: 33.33%; /* escritorio */
-}
-
-/* Tablet */
+        /* 📱 TELÉFONOS */
 @media (max-width: 768px) {
-  .tarjeta {
-    width: 50%;
-  }
-}
 
-/* Teléfono */
-@media (max-width: 480px) {
-  .tarjeta {
-    width: 50%; /* 👈 2 tarjetas */
-  }
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 por fila */
+        gap: 15px;
+    }
+
+    .card img {
+        height: 250px; /* más pequeño para móvil */
+    }
+
+    .container {
+        padding: 0 5% 60px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin: 40px 0 20px;
+    }
+
+    .main-title {
+        font-size: 2.2rem;
+    }
+
+    .logo-circular {
+        width: 150px;
+        height: 150px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 0.6rem;
+        margin: 5px;
+    }
 }
     </style>
 </head>
