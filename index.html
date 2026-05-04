@@ -29,7 +29,9 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== TEXTO ORO ===== */
+/* =======================
+   DORADO ANIMADO
+======================= */
 .texto-oro {
     background: var(--oro-puro);
     background-size: 200% auto;
@@ -38,7 +40,13 @@ body {
     animation: brilloOro 3s linear infinite;
 }
 
-/* ===== NAV ===== */
+@keyframes brilloOro {
+    to { background-position: 200% center; }
+}
+
+/* =======================
+   NAV
+======================= */
 nav {
     padding: 20px 5%;
     display: flex;
@@ -47,6 +55,7 @@ nav {
     background: rgba(10,10,10,0.98);
     position: sticky;
     top: 0;
+    z-index: 1000;
     border-bottom: 3px solid var(--oro-solido);
 }
 
@@ -58,57 +67,75 @@ nav {
     text-transform: uppercase;
 }
 
-/* ===== HERO ===== */
+/* =======================
+   HERO (NO TOCADO VISUALMENTE)
+======================= */
 .hero {
-    height: auto; /* 🔥 IMPORTANTE */
-    padding: 80px 20px 40px;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    padding: 20px;
 }
 
 .logo-circular {
-    width: 220px;
-    height: 220px;
+    width: 230px;
+    height: 230px;
     border-radius: 50%;
     border: 8px double var(--oro-solido);
     background: white;
+    box-shadow: 0 0 40px rgba(197,160,89,0.5);
 }
 
-/* ===== TEXTO HERO ===== */
+/* textos del hero */
 .hero p {
     font-family: 'Playfair Display', serif;
     font-size: 1.2rem;
     font-style: italic;
     color: #8a6d3b;
-    margin: 5px 0;
+    margin: 4px 0;
 }
 
-/* ===== TITULO ===== */
+/* título */
 .main-title {
     font-family: 'Cinzel Decorative', cursive;
     font-size: clamp(2rem, 6vw, 5rem);
     margin: 20px 0;
 }
 
-/* ===== CATEGORÍAS ===== */
+/* =======================
+   TITULO SECCIÓN
+======================= */
 .section-title {
     text-align: center;
-    font-family: 'Cinzel Decorative';
+    font-family: 'Cinzel Decorative', cursive;
     font-size: 2.5rem;
-    margin: 30px 0;
+    margin: 25px 0 20px; /* 🔥 arreglado espacio */
 }
 
+/* =======================
+   CONTAINER
+======================= */
 .container {
     padding: 0 8% 80px;
 }
 
+/* =======================
+   GRID BASE
+======================= */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
 }
 
-/* ===== CARDS ===== */
+/* =======================
+   CARDS
+======================= */
 .card {
+    position: relative;
     background: var(--negro-lujo);
     border-radius: 30px 0 30px 0;
     overflow: hidden;
@@ -117,11 +144,11 @@ nav {
 
 .card img {
     width: 100%;
-    height: 350px;
+    height: 380px;
     object-fit: cover;
 }
 
-/* 🔥 TEXTO NO SE SALE */
+/* overlay seguro */
 .card-overlay {
     position: absolute;
     bottom: 0;
@@ -135,8 +162,9 @@ nav {
     font-size: 1.1rem;
 }
 
-/* ===== BOTÓN ===== */
+/* botón */
 .btn-gold {
+    display: inline-block;
     padding: 10px 25px;
     background: var(--oro-puro);
     border-radius: 50px;
@@ -145,43 +173,91 @@ nav {
     text-decoration: none;
 }
 
-/* ===== REDES ===== */
-.social-icons a {
-    font-size: 2rem;
-    margin: 10px;
-    color: var(--oro-solido);
+/* =======================
+   FOOTER / REDES
+======================= */
+footer {
+    background: var(--negro-lujo);
+    color: white;
+    padding: 80px 10% 40px;
+    text-align: center;
 }
 
-/* ===== RESPONSIVE ===== */
+.social-icons a {
+    color: var(--oro-solido);
+    font-size: 2rem;
+    margin: 10px;
+}
+
+/* =======================
+   RESPONSIVE FINAL PRO
+======================= */
+
+/* TABLET */
 @media (max-width: 768px) {
 
-    .hero {
-        padding: 60px 15px;
-    }
-
     .grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 18px;
     }
 
     .card img {
-        height: 250px;
+        height: 260px;
+    }
+
+    .logo-circular {
+        width: 160px;
+        height: 160px;
+    }
+
+    .main-title {
+        font-size: 2.2rem;
     }
 }
 
+/* CELULAR */
 @media (max-width: 480px) {
 
     .grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr) !important;
         gap: 10px;
+    }
+
+    .container {
+        padding: 0 4% 50px;
     }
 
     .card img {
         height: 180px;
     }
 
+    .card-overlay {
+        padding: 12px;
+    }
+
+    .card-overlay h2 {
+        font-size: 0.95rem;
+    }
+
+    .btn-gold {
+        font-size: 0.7rem;
+        padding: 8px 15px;
+    }
+
     .hero p {
         font-size: 1rem;
+    }
+}
+
+/* EXTRA PEQUEÑO */
+@media (max-width: 360px) {
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .card img {
+        height: 160px;
     }
 }
 
@@ -193,15 +269,15 @@ nav {
 <nav>
     <img src="logo.png" style="height:55px;border-radius:50%;">
     <div class="nav-links">
-        <a href="#">Inicio</a>
-        <a href="#">Carteras</a>
-        <a href="#">Joyeria</a>
-        <a href="#">Perfumeria</a>
-        <a href="#">Redes</a>
+        <a href="index.html">Inicio</a>
+        <a href="cartera.html">Carteras</a>
+        <a href="Joyeria.html">Joyeria</a>
+        <a href="Perfumes.html">Perfumeria</a>
+        <a href="contacto.html">Redes Sociales</a>
     </div>
 </nav>
 
-<!-- HERO (TU TEXTO COMPLETO RESTAURADO) -->
+<!-- HERO ORIGINAL COMPLETO RESTAURADO -->
 <section class="hero">
 
     <img src="logo.png" class="logo-circular">
@@ -221,36 +297,36 @@ nav {
 <h2 class="section-title texto-oro">Nuestras Categorías</h2>
 
 <div class="container">
-    <div class="grid">
+<div class="grid">
 
-        <div class="card">
-            <img src="https://i.pinimg.com/736x/19/03/c3/1903c356d441887803b845e5e5f714cd.jpg">
-            <div class="card-overlay">
-                <h2 class="texto-oro">Carteras</h2>
-                <a href="#" class="btn-gold">Ver Catalogo</a>
-            </div>
+    <div class="card">
+        <img src="https://i.pinimg.com/736x/19/03/c3/1903c356d441887803b845e5e5f714cd.jpg">
+        <div class="card-overlay">
+            <h2 class="texto-oro">Carteras</h2>
+            <a href="cartera.html" class="btn-gold">Ver Catalogo</a>
         </div>
-
-        <div class="card">
-            <img src="https://i.pinimg.com/736x/4f/d1/14/4fd114f36131d87bd026d413dc4a0441.jpg">
-            <div class="card-overlay">
-                <h2 class="texto-oro">Joyería</h2>
-                <a href="#" class="btn-gold">Ver Catalogo</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://i.pinimg.com/736x/91/67/fa/9167faf8aa792f3a01f14c9951191dbe.jpg">
-            <div class="card-overlay">
-                <h2 class="texto-oro">Perfumería</h2>
-                <a href="#" class="btn-gold">Ver Catalogo</a>
-            </div>
-        </div>
-
     </div>
+
+    <div class="card">
+        <img src="https://i.pinimg.com/736x/4f/d1/14/4fd114f36131d87bd026d413dc4a0441.jpg">
+        <div class="card-overlay">
+            <h2 class="texto-oro">Joyería</h2>
+            <a href="Joyeria.html" class="btn-gold">Ver Catalogo</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://i.pinimg.com/736x/91/67/fa/9167faf8aa792f3a01f14c9951191dbe.jpg">
+        <div class="card-overlay">
+            <h2 class="texto-oro">Perfumería</h2>
+            <a href="Perfumes.html" class="btn-gold">Ver Catalogo</a>
+        </div>
+    </div>
+
+</div>
 </div>
 
-<footer style="text-align:center;padding:60px;background:#0a0a0a;color:white;">
+<footer>
     <h2 class="texto-oro">Redes Sociales</h2>
     <div class="social-icons">
         <a href="#"><i class="fab fa-instagram"></i></a>
