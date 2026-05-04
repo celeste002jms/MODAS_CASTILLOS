@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modas Castillo | The Gold Experience</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modas Castillo | The Gold Experience</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat:wght@300;600&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat:wght@300;600&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
+
 :root {
     --oro-puro: linear-gradient(90deg, #b38b4d, #f9f1dc, #b38b4d, #ffebad, #b38b4d);
     --oro-solido: #c5a059;
@@ -24,13 +25,11 @@
 
 body {
     background: radial-gradient(circle at center, #ffffff 0%, #f7e8c3 50%, #d4af37 100%);
-    background-attachment: fixed;
     font-family: 'Montserrat', sans-serif;
-    color: var(--negro-lujo);
     overflow-x: hidden;
 }
 
-/* --- DORADO ANIMADO --- */
+/* ===== TEXTO ORO ===== */
 .texto-oro {
     background: var(--oro-puro);
     background-size: 200% auto;
@@ -39,197 +38,141 @@ body {
     animation: brilloOro 3s linear infinite;
 }
 
-@keyframes brilloOro {
-    to { background-position: 200% center; }
-}
-
-/* --- NAV --- */
+/* ===== NAV ===== */
 nav {
     padding: 20px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(10, 10, 10, 0.98);
+    background: rgba(10,10,10,0.98);
     position: sticky;
     top: 0;
-    z-index: 1000;
     border-bottom: 3px solid var(--oro-solido);
 }
 
 .nav-links a {
     color: white;
-    text-decoration: none;
     margin-left: 15px;
-    font-weight: 600;
-    letter-spacing: 1px;
     font-size: 0.7rem;
+    text-decoration: none;
     text-transform: uppercase;
-    transition: 0.4s;
 }
 
-.nav-links a:hover {
-    color: var(--oro-solido);
-    text-shadow: 0 0 8px var(--oro-solido);
-}
-
-/* --- HERO --- */
+/* ===== HERO ===== */
 .hero {
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: auto; /* 🔥 IMPORTANTE */
+    padding: 80px 20px 40px;
     text-align: center;
 }
 
 .logo-circular {
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     border: 8px double var(--oro-solido);
-    padding: 10px;
     background: white;
-    box-shadow: 0 0 50px rgba(197,160,89,0.5);
-    animation: float 6s ease-in-out infinite;
 }
 
-@keyframes float {
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-20px);}
+/* ===== TEXTO HERO ===== */
+.hero p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #8a6d3b;
+    margin: 5px 0;
 }
 
+/* ===== TITULO ===== */
 .main-title {
     font-family: 'Cinzel Decorative', cursive;
-    font-size: clamp(2.5rem, 8vw, 5.5rem);
-    margin-top: 25px;
-    text-transform: uppercase;
+    font-size: clamp(2rem, 6vw, 5rem);
+    margin: 20px 0;
 }
 
-/* --- SECCIONES --- */
+/* ===== CATEGORÍAS ===== */
 .section-title {
     text-align: center;
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 3rem;
-    margin: 30px 0 30px; /* 🔥 ARREGLADO ESPACIO */
+    font-family: 'Cinzel Decorative';
+    font-size: 2.5rem;
+    margin: 30px 0;
 }
 
 .container {
-    padding: 0 10% 100px;
+    padding: 0 8% 80px;
 }
 
-/* --- GRID --- */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
 }
 
-/* --- CARDS --- */
+/* ===== CARDS ===== */
 .card {
-    position: relative;
     background: var(--negro-lujo);
-    border-radius: 40px 0 40px 0;
+    border-radius: 30px 0 30px 0;
     overflow: hidden;
     border: 2px solid var(--oro-solido);
-    transition: 0.5s;
-}
-
-.card:hover {
-    transform: scale(1.03);
-    box-shadow: 15px 15px 0 var(--oro-solido);
 }
 
 .card img {
     width: 100%;
-    height: 450px;
+    height: 350px;
     object-fit: cover;
-    opacity: 0.7;
-    transition: 0.5s;
 }
 
-.card:hover img {
-    opacity: 1;
-}
-
+/* 🔥 TEXTO NO SE SALE */
 .card-overlay {
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 20px; /* 🔥 reducido para móvil */
-    background: linear-gradient(transparent, rgba(0,0,0,0.95));
+    padding: 18px;
     text-align: center;
+    background: linear-gradient(transparent, rgba(0,0,0,0.95));
 }
 
 .card-overlay h2 {
-    font-size: 1.2rem;
-    line-height: 1.2;
-    word-wrap: break-word;
+    font-size: 1.1rem;
 }
 
+/* ===== BOTÓN ===== */
 .btn-gold {
-    display: inline-block;
-    padding: 12px 35px;
+    padding: 10px 25px;
     background: var(--oro-puro);
-    background-size: 200% auto;
-    color: #000;
-    text-decoration: none;
-    font-weight: 800;
     border-radius: 50px;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    transition: 0.5s;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-.btn-gold:hover {
-    background-position: right;
-    transform: translateY(-3px);
-}
-
-/* --- FOOTER --- */
-footer {
-    background: var(--negro-lujo);
-    color: white;
-    padding: 100px 10% 40px;
-    text-align: center;
-}
-
+/* ===== REDES ===== */
 .social-icons a {
-    color: var(--oro-solido);
     font-size: 2rem;
-    margin: 15px;
-    transition: 0.3s;
+    margin: 10px;
+    color: var(--oro-solido);
 }
 
-.social-icons a:hover {
-    color: white;
-    transform: scale(1.2);
-}
-
-/* =========================
-   📱 RESPONSIVE FIX FINAL
-========================= */
-
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+
+    .hero {
+        padding: 60px 15px;
+    }
 
     .grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 15px;
     }
 
     .card img {
-        height: 300px;
-    }
-
-    .logo-circular {
-        width: 160px;
-        height: 160px;
+        height: 250px;
     }
 }
 
 @media (max-width: 480px) {
 
     .grid {
-        grid-template-columns: repeat(2, 1fr); /* 🔥 2 columnas fijo */
+        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
 
@@ -237,52 +180,42 @@ footer {
         height: 180px;
     }
 
-    .card-overlay {
-        padding: 12px;
-    }
-
-    .card-overlay h2 {
-        font-size: 0.95rem;
-    }
-
-    .btn-gold {
-        font-size: 0.7rem;
-        padding: 8px 15px;
+    .hero p {
+        font-size: 1rem;
     }
 }
 
-@media (max-width: 360px) {
-
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .card img {
-        height: 160px;
-    }
-}
 </style>
 </head>
 
 <body>
 
 <nav>
-    <img src="logo.png" style="height:55px;border-radius:50%;border:1px solid var(--oro-solido);">
+    <img src="logo.png" style="height:55px;border-radius:50%;">
     <div class="nav-links">
-        <a href="index.html">Inicio</a>
-        <a href="cartera.html">Carteras</a>
-        <a href="Joyeria.html">Joyeria</a>
-        <a href="Perfumes.html">Perfumeria</a>
-        <a href="contacto.html">Redes Sociales</a>
+        <a href="#">Inicio</a>
+        <a href="#">Carteras</a>
+        <a href="#">Joyeria</a>
+        <a href="#">Perfumeria</a>
+        <a href="#">Redes</a>
     </div>
 </nav>
 
+<!-- HERO (TU TEXTO COMPLETO RESTAURADO) -->
 <section class="hero">
+
     <img src="logo.png" class="logo-circular">
+
     <h1 class="main-title">
-        <span style="color:var(--negro-lujo);">Modas</span>
+        <span style="color: var(--negro-lujo);">Modas</span>
         <span class="texto-oro">Castillo</span>
     </h1>
+
+    <p>Calidad que se nota</p>
+    <p>Tienda Online Hondureña</p>
+    <p>Envios a Nivel Nacional en Honduras</p>
+    <p>Ubicados en Danli, El Paraiso</p>
+
 </section>
 
 <h2 class="section-title texto-oro">Nuestras Categorías</h2>
@@ -294,7 +227,7 @@ footer {
             <img src="https://i.pinimg.com/736x/19/03/c3/1903c356d441887803b845e5e5f714cd.jpg">
             <div class="card-overlay">
                 <h2 class="texto-oro">Carteras</h2>
-                <a href="cartera.html" class="btn-gold">Ver Catalogo</a>
+                <a href="#" class="btn-gold">Ver Catalogo</a>
             </div>
         </div>
 
@@ -302,7 +235,7 @@ footer {
             <img src="https://i.pinimg.com/736x/4f/d1/14/4fd114f36131d87bd026d413dc4a0441.jpg">
             <div class="card-overlay">
                 <h2 class="texto-oro">Joyería</h2>
-                <a href="Joyeria.html" class="btn-gold">Ver Catalogo</a>
+                <a href="#" class="btn-gold">Ver Catalogo</a>
             </div>
         </div>
 
@@ -310,15 +243,20 @@ footer {
             <img src="https://i.pinimg.com/736x/91/67/fa/9167faf8aa792f3a01f14c9951191dbe.jpg">
             <div class="card-overlay">
                 <h2 class="texto-oro">Perfumería</h2>
-                <a href="Perfumes.html" class="btn-gold">Ver Catalogo</a>
+                <a href="#" class="btn-gold">Ver Catalogo</a>
             </div>
         </div>
 
     </div>
 </div>
 
-<footer>
+<footer style="text-align:center;padding:60px;background:#0a0a0a;color:white;">
     <h2 class="texto-oro">Redes Sociales</h2>
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
 </footer>
 
 </body>
