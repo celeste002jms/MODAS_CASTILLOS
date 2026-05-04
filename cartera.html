@@ -77,11 +77,7 @@
 
         .container { padding: 0 8% 100px; }
 
-        .grid-carteras {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
+       
 
         .producto-card {
             background: var(--negro-tarjeta);
@@ -178,6 +174,37 @@
             text-align: center;
             clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
         }
+                /* --- RESPONSIVE MOVIL --- */
+/* Tablet */
+/* Teléfono */
+@media (max-width: 480px) {
+  .contenedor-tarjetas {
+    grid-template-columns: repeat(2, 1fr); /* 👈 aquí forzamos 2 */
+  }
+}
+
+.contenedor-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tarjeta {
+  width: 33.33%; /* escritorio */
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .tarjeta {
+    width: 50%;
+  }
+}
+
+/* Teléfono */
+@media (max-width: 480px) {
+  .tarjeta {
+    width: 50%; /* 👈 2 tarjetas */
+  }
+}
     </style>
 </head>
 <body>
