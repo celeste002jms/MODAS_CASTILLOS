@@ -187,86 +187,41 @@
         .social-icons a:hover { color: white; transform: scale(1.2); }
 
         /* --- RESPONSIVE MOVIL --- */
+/* Tablet */
 @media (max-width: 768px) {
-
-    nav {
-        flex-direction: column;
-        padding: 15px;
-        text-align: center;
-    }
-
-    .nav-links {
-        margin-top: 10px;
-    }
-
-    .nav-links a {
-        display: inline-block;
-        margin: 8px;
-        font-size: 0.65rem;
-    }
-
-    .hero {
-        height: auto;
-        padding: 40px 20px;
-    }
-
-    .logo-circular {
-        width: 160px;
-        height: 160px;
-    }
-
-    .main-title {
-        font-size: 2.2rem;
-        margin-top: 15px;
-    }
-
-    .section-title {
-        font-size: 2rem;
-        margin: 50px 0 20px;
-    }
-
-    .container {
-        padding: 0 5% 60px;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .card img {
-        height: 300px;
-    }
-
-    .card {
-        border-radius: 25px;
-    }
-
-    .card-overlay {
-        padding: 20px;
-    }
-
-    .btn-gold {
-        padding: 10px 25px;
-        font-size: 0.7rem;
-    }
-
-    footer {
-        padding: 80px 5% 30px;
-        clip-path: none;
-    }
-
-    .social-icons a {
-        font-size: 2rem;
-        margin: 10px;
-    }
+  .contenedor-tarjetas {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
+
+/* Teléfono */
 @media (max-width: 480px) {
-    .nav-links a {
-        display: block;
-        margin: 10px 0;
-        font-size: 0.8rem;
-    }
+  .contenedor-tarjetas {
+    grid-template-columns: repeat(2, 1fr); /* 👈 aquí forzamos 2 */
+  }
+}
+
+.contenedor-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tarjeta {
+  width: 33.33%; /* escritorio */
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .tarjeta {
+    width: 50%;
+  }
+}
+
+/* Teléfono */
+@media (max-width: 480px) {
+  .tarjeta {
+    width: 50%; /* 👈 2 tarjetas */
+  }
 }
     </style>
 </head>
