@@ -184,38 +184,43 @@
             text-decoration: none;
         }
 
-        .social-icons a:hover { color: white; transform: scale(1.2); }
-
+        .social-icons a:hover {
+    color: white;
+    transform: scale(1.2);
 }
 
- /* 📱 Tablets y celulares grandes */
+/* =========================
+   📱 RESPONSIVE CORREGIDO
+========================= */
+
+/* 📱 Tablets y celulares grandes */
 @media (max-width: 768px) {
 
     .grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 por fila */
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 
     .card img {
-        height: 140px;
+        height: 300px;
     }
 
     .container {
-        padding: 0 5% 50px;
+        padding: 0 6% 60px;
     }
 
     .section-title {
-        font-size: 1.8rem;
-        margin: 30px 0 20px;
+        font-size: 2.2rem;
+        margin: 50px 0 30px;
     }
 
     .main-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .logo-circular {
-        width: 130px;
-        height: 130px;
+        width: 160px;
+        height: 160px;
     }
 
     nav {
@@ -230,48 +235,57 @@
     }
 
     .nav-links a {
-        font-size: 0.8rem;
-        margin: 5px;
+        font-size: 0.75rem;
     }
 }
 
 
-/* 📱 Celulares pequeños */
+/* 📱 CELULARES */
 @media (max-width: 480px) {
 
     .grid {
-        grid-template-columns: repeat(1, 1fr); /* 1 por fila (mejor UX) */
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr); /* 🔥 AQUÍ EL CAMBIO CLAVE */
+        gap: 12px;
     }
 
     .card img {
-        height: 160px;
+        height: 220px;
     }
 
-    .btn-gold {
-        padding: 10px 20px;
-        font-size: 0.8rem;
+    .container {
+        padding: 0 5% 50px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
     }
 
     .main-title {
         font-size: 1.6rem;
     }
 
-    .section-title {
-        font-size: 1.5rem;
+    .btn-gold {
+        font-size: 0.75rem;
+        padding: 10px 20px;
+    }
+
+    .logo-circular {
+        width: 140px;
+        height: 140px;
     }
 }
 
 
-/* 📱 Pantallas MUY pequeñas (opcional) */
+/* 📱 MUY PEQUEÑOS */
 @media (max-width: 360px) {
 
     .grid {
-        grid-template-columns: 1fr; /* siempre 1 columna */
+        grid-template-columns: repeat(2, 1fr); /* 🔥 mantengo 2 columnas */
+        gap: 10px;
     }
 
     .card img {
-        height: 140px;
+        height: 180px;
     }
 
     .nav-links a {
