@@ -29,9 +29,7 @@ body {
     overflow-x: hidden;
 }
 
-/* =======================
-   DORADO ANIMADO
-======================= */
+/* DORADO ANIMADO */
 .texto-oro {
     background: var(--oro-puro);
     background-size: 200% auto;
@@ -44,9 +42,7 @@ body {
     to { background-position: 200% center; }
 }
 
-/* =======================
-   NAV
-======================= */
+/* NAV */
 nav {
     padding: 20px 5%;
     display: flex;
@@ -67,9 +63,7 @@ nav {
     text-transform: uppercase;
 }
 
-/* =======================
-   HERO (NO TOCADO VISUALMENTE)
-======================= */
+/* HERO */
 .hero {
     height: 85vh;
     display: flex;
@@ -89,51 +83,42 @@ nav {
     box-shadow: 0 0 40px rgba(197,160,89,0.5);
 }
 
-/* textos del hero */
+/* 🔥 CAMBIO IMPORTANTE: TEXTO NEGRO */
 .hero p {
     font-family: 'Playfair Display', serif;
     font-size: 1.2rem;
     font-style: italic;
-    color: #8a6d3b;
+    color: #000; /* antes era dorado */
     margin: 4px 0;
 }
 
-/* título */
 .main-title {
     font-family: 'Cinzel Decorative', cursive;
     font-size: clamp(2rem, 6vw, 5rem);
     margin: 20px 0;
 }
 
-/* =======================
-   TITULO SECCIÓN
-======================= */
+/* TITULO */
 .section-title {
     text-align: center;
     font-family: 'Cinzel Decorative', cursive;
     font-size: 2.5rem;
-    margin: 25px 0 20px; /* 🔥 arreglado espacio */
+    margin: 25px 0 20px;
 }
 
-/* =======================
-   CONTAINER
-======================= */
+/* CONTAINER */
 .container {
     padding: 0 8% 80px;
 }
 
-/* =======================
-   GRID BASE
-======================= */
+/* 🔥 AJUSTE SUAVE PARA QUE LAS TARJETAS NO SE VEAN PEQUEÑAS */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 25px;
 }
 
-/* =======================
-   CARDS
-======================= */
+/* CARDS */
 .card {
     position: relative;
     background: var(--negro-lujo);
@@ -148,7 +133,6 @@ nav {
     object-fit: cover;
 }
 
-/* overlay seguro */
 .card-overlay {
     position: absolute;
     bottom: 0;
@@ -162,7 +146,6 @@ nav {
     font-size: 1.1rem;
 }
 
-/* botón */
 .btn-gold {
     display: inline-block;
     padding: 10px 25px;
@@ -173,9 +156,7 @@ nav {
     text-decoration: none;
 }
 
-/* =======================
-   FOOTER / REDES
-======================= */
+/* FOOTER */
 footer {
     background: var(--negro-lujo);
     color: white;
@@ -189,15 +170,11 @@ footer {
     margin: 10px;
 }
 
-/* =======================
-   RESPONSIVE FINAL PRO
-======================= */
-
-/* TABLET */
+/* RESPONSIVE */
 @media (max-width: 768px) {
 
     .grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(2, 1fr);
         gap: 18px;
     }
 
@@ -215,11 +192,10 @@ footer {
     }
 }
 
-/* CELULAR */
 @media (max-width: 480px) {
 
     .grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
 
@@ -249,18 +225,6 @@ footer {
     }
 }
 
-/* EXTRA PEQUEÑO */
-@media (max-width: 360px) {
-
-    .grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-
-    .card img {
-        height: 160px;
-    }
-}
-
 </style>
 </head>
 
@@ -277,7 +241,6 @@ footer {
     </div>
 </nav>
 
-<!-- HERO ORIGINAL COMPLETO RESTAURADO -->
 <section class="hero">
 
     <img src="logo.png" class="logo-circular">
@@ -329,9 +292,9 @@ footer {
 <footer>
     <h2 class="texto-oro">Redes Sociales</h2>
     <div class="social-icons">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-tiktok"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/modascastillo0?_r=MW5kd2tta2t6ajg3Zg=="><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@modascastillo0?_r=1&_t=ZS-9619HIoE2SK"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/50433597430"><i class="fab fa-whatsapp"></i></a>
     </div>
 </footer>
 
